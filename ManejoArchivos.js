@@ -65,18 +65,23 @@ class ProductManager {
 
 }
 
-// Example usage
-const productManager = new ProductManager("archivo1.json");
+
+const productManager1 = new ProductManager("json1.json");
+const productManager2 = new ProductManager("json2.json");
 
 try {
-  productManager.addProduct("Producto 1", "Descripción 1", 10, "imagen1.jpg", "PC001", 100);
-  productManager.addProduct("Producto 2", "Descripción 2", 20, "imagen2.jpg", "PC002", 200);
+  productManager1.addProduct("Producto 1", "Descripción 1", 10, "imagen1.jpg", "PC001", 300);
+  productManager2.addProduct("Producto 2", "Descripción 2", 20, "imagen2.jpg", "PC002", 500);
   
 } catch (error) {
   console.error(error.message);
 }
 
-console.log(productManager.getProducts());
+console.log(productManager1.getProducts());
+console.log(productManager2.getProducts());
 
-const product = productManager.getProductById(1);
-const product2 = productManager.getProductById(5);
+const product1 = productManager1.getProductById(1);//mismo ID distinto archivo
+const product2 = productManager2.getProductById(1);//mismo ID distinto archivo
+
+console.log(product1);
+console.log(product2);
